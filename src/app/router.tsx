@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     path: paths.thoughts.root,
     children: [
       { index: true, element: <ThoughtsHomePage /> },
-      { path: "/:id", element: <ThoughtsDetailsPage /> },
+      { path: ":id", element: <ThoughtsDetailsPage /> },
     ],
   },
 ]);
