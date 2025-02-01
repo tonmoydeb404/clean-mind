@@ -1,1 +1,49 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* Theme Colors */
+
+:root {
+  --primary: #2563eb;
+  --secondary: #9333ea;
+  --error: #dc2626;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --background: #f3f4f6;
+  --foreground: #1f2937;
+  --neutral: #64748b;
+}
+
+.dark {
+  --primary: #3b82f6;
+  --secondary: #a855f7;
+  --error: #ef4444;
+  --success: #22c55e;
+  --warning: #fbbf24;
+  --background: #1e293b;
+  --foreground: #f3f4f6;
+  --neutral: #94a3b8;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-error: var(--error);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-neutral: var(--neutral);
+}
+
+@layer base {
+  html,
+  body {
+    @apply bg-background text-foreground;
+  }
+}
