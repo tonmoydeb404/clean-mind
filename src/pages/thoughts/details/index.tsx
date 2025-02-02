@@ -3,6 +3,7 @@ import paths from "@/router/paths";
 import { LucideHome, LucideSave, LucideX } from "lucide-react";
 import { DOMAttributes } from "react";
 import { Link } from "react-router-dom";
+import EditableSection from "./editable";
 
 type Props = {};
 
@@ -33,14 +34,16 @@ const ThoughtsDetailsPage = (_props: Props) => {
         </div>
       </div>
 
-      <div className="container py-5">
+      <div className="container max-w-4xl py-5">
         <h1
           contentEditable
-          className="focus:outline-none text-3xl font-bold"
+          className="focus:outline-none text-3xl font-bold mb-5"
           onKeyDown={handleKeyDown}
         >
           Hello World
         </h1>
+
+        <EditableSection />
       </div>
     </>
   );
