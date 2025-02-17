@@ -9,11 +9,33 @@ export type CustomText = {
   underline?: boolean;
   code?: boolean;
 };
-export type CustomElement = { type: "paragraph"; children: CustomText[] };
+
+export type ParagraphElement = { type: "paragraph"; children: CustomText[] };
+export type ListItemElement = { type: "list-item"; children: CustomText[] };
+export type BulletedListElement = {
+  type: "bulleted-list";
+  children: ListItemElement[];
+};
+export type NumberedListElement = {
+  type: "numbered-list";
+  children: ListItemElement[];
+};
+export type CheckboxElement = {
+  type: "checkbox";
+  checked: boolean;
+  children: CustomText[];
+};
+
+export type CustomElement =
+  | ParagraphElement
+  | ListItemElement
+  | BulletedListElement
+  | NumberedListElement
+  | CheckboxElement;
 
 declare module "slate" {
   interface CustomTypes {
-    Editor: BaseEditor & ReactEditor;
+    Editor: BaseEditor & ReactEditor & HistoryEditor;
     Element: CustomElement;
     Text: CustomText;
   }
