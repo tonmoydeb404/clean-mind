@@ -1,11 +1,11 @@
-import Editor from "@/components/editor";
+import RichTextExample from "@/components/editor/demo";
 
 type Props = {};
 
 const editable = (_props: Props) => {
   return (
     <div>
-      <Editor />
+      <RichTextExample />
     </div>
   );
 };

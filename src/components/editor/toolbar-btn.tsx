@@ -18,7 +18,7 @@ const ToolbarButton: React.FC<Props> = (props) => {
   const toggleFormat = useCallback(() => {
     Transforms.setNodes(
       editor,
-      { [format]: match ? undefined : true } as Partial<CustomText>,
+      { [format]: match ? undefined : true },
       { match: (n) => Text.isText(n), split: true }
     );
   }, [editor, format, match]);

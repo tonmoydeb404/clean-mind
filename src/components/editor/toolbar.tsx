@@ -2,10 +2,14 @@ import {
   LucideBold,
   LucideCode,
   LucideItalic,
+  LucideList,
+  LucideListOrdered,
+  LucideListTodo,
   LucideUnderline,
 } from "lucide-react";
 import React from "react";
 import ToolbarButton from "./toolbar-btn";
+import ToolbarTypeButton from "./toolbar-type-btn";
 
 const Toolbar: React.FC = () => {
   return (
@@ -14,6 +18,12 @@ const Toolbar: React.FC = () => {
       <ToolbarButton format="italic" icon={<LucideItalic size={16} />} />
       <ToolbarButton format="underline" icon={<LucideUnderline size={16} />} />
       <ToolbarButton format="code" icon={<LucideCode size={16} />} />
+      <ToolbarTypeButton type="list-item" icon={<LucideList size={16} />} />
+      <ToolbarTypeButton
+        type="numbered-list"
+        icon={<LucideListOrdered size={16} />}
+      />
+      <ToolbarTypeButton type="checkbox" icon={<LucideListTodo size={16} />} />
     </div>
   );
 };
